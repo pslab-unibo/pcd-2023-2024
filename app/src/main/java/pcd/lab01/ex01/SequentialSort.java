@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SequentialSort {
 
-	static final int VECTOR_SIZE = 200000000;
+	static final int VECTOR_SIZE = 20000000;
 	
 	public static void main(String[] args) {
 	
@@ -22,8 +22,7 @@ public class SequentialSort {
 		// dumpArray(v);
 	}
 
-
-	private static long[] genArray(int n) {
+	protected static long[] genArray(int n) {
 		Random gen = new Random(System.currentTimeMillis());
 		long v[] = new long[n];
 		for (int i = 0; i < v.length; i++) {
@@ -32,13 +31,13 @@ public class SequentialSort {
 		return v;
 	}
 
-	private static void dumpArray(long[] v) {
+	protected static void dumpArray(long[] v) {
 		for (long l:  v) {
 			System.out.print(l + " ");
 		}
 	}
 
-	private static void log(String msg) {
+	protected static void log(String msg) {
 		System.out.println(msg);
 	}
 }
