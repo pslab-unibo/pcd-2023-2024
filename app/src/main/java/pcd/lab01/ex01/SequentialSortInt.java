@@ -2,15 +2,14 @@ package pcd.lab01.ex01;
 
 import java.util.*;
 
-public class SequentialSort {
+public class SequentialSortInt {
 
-
-	static final int VECTOR_SIZE = 400000000;
+	static final int VECTOR_SIZE = 400_000_000;
 	
 	public static void main(String[] args) {
 	
 		log("Generating array...");
-		long[] v = genArray(VECTOR_SIZE);
+		int[] v = genArray(VECTOR_SIZE);
 		
 		log("Array generated.");
 		log("Sorting (" + VECTOR_SIZE + " elements)...");
@@ -23,22 +22,24 @@ public class SequentialSort {
 		// dumpArray(v);
 	}
 
-	protected static long[] genArray(int n) {
+
+	private static int[] genArray(int n) {
 		Random gen = new Random(System.currentTimeMillis());
-		long v[] = new long[n];
+		int[] v = new int[n];
 		for (int i = 0; i < v.length; i++) {
-			v[i] = gen.nextLong();
+			v[i] = gen.nextInt();
 		}
 		return v;
 	}
 
-	protected static void dumpArray(long[] v) {
-		for (long l:  v) {
+	private static void dumpArray(int[] v) {
+		for (int l:  v) {
 			System.out.print(l + " ");
 		}
+		System.out.println();
 	}
 
-	protected static void log(String msg) {
+	private static void log(String msg) {
 		System.out.println(msg);
 	}
 }
